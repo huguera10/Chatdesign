@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Change the following strings as required -->
+    <string name="back4app_app_id">iTwACXeY259R4zh6ndtwNCnvA1EjWiuhOHfR2LQn</string>
+    <string name="back4app_dotnet_key">fA6EajYUygZdCcnviuXoaAqeHrpJ2rvSKiF1kaGO</string>
+  
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="ApplicationName">Chat</string>
+  
+</resources>
