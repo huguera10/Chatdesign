@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Graphics;
@@ -17,7 +13,6 @@ namespace Chatdesign
     {
         List<ChatMessage> chatMessageList;
         private static LayoutInflater inflater = null;
-        Context context;
 
         public ChatAdapter(Activity activity, List<ChatMessage> list)
         {
@@ -50,15 +45,39 @@ namespace Chatdesign
             LinearLayout parent_layout = (LinearLayout)vi
                     .FindViewById(Chat.Resource.Id.bubble_layout_parent);
 
+            ImageView _imageView = (ImageView)vi.FindViewById(Chat.Resource.Id.imageView1);
+
             // if message is mine then align to right
             if (message.isMine)
             {
+                if (message.body.Equals(""))
+                {
+                    //_imageView.SetImageURI(message.getUriImage());
+                    Bitmap bitmap = BitmapFactory.DecodeByteArray(message.getByteFile(), 0, message.getByteFile().Length);
+                    _imageView.SetImageBitmap(bitmap);
+                }
+                else
+                {
+                    _imageView.SetImageBitmap(null);
+                }
+
+                
                 layout.SetBackgroundResource(Chat.Resource.Drawable.bubble2);
                 parent_layout.SetGravity(GravityFlags.Right);
             }
             // If not mine then align to left
             else
             {
+                if (message.body.Equals(""))
+                {
+                    Bitmap bitmap = BitmapFactory.DecodeByteArray(message.getByteFile(), 0, message.getByteFile().Length);
+                    _imageView.SetImageBitmap(bitmap);
+                }
+                else
+                {
+                    _imageView.SetImageBitmap(null);
+                }
+
                 layout.SetBackgroundResource(Chat.Resource.Drawable.bubble1);
                 parent_layout.SetGravity(GravityFlags.Left);
             }
@@ -66,6 +85,7 @@ namespace Chatdesign
             return vi;
             
         }
+
 
         public void add(ChatMessage msg)
         {

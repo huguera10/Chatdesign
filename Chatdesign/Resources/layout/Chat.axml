@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#e1e1e1" >
+    android:background="#e1e1e1">
     <ListView
         android:id="@+id/msgListView"
         android:layout_width="wrap_content"
@@ -34,6 +34,14 @@
             android:ems="10"
             android:maxHeight="80dp"
             android:textColor="#000000" />
+        <ImageButton
+            android:id="@+id/attachmentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/attachment"
+            android:text="d" />
         <ImageButton
             android:id="@+id/sendMessageButton"
             android:layout_width="wrap_content"
